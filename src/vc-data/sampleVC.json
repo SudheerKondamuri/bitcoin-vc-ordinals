@@ -1,31 +1,26 @@
 {
   "@context": [
-    "https://www.w3.org/2018/credentials/v1"
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1"
   ],
-  "id": "urn:uuid:1b8cbb8e-9b34-4db8-94dd-22334ff12cab",
-  "type": [
-    "VerifiableCredential",
-    "CourseCompletionCredential"
-  ],
-  "issuer": {
-    "id": "did:example:issuer-12345",
-    "name": "Blockchain Academy"
-  },
-  "issuanceDate": "2025-12-06T09:00:00Z",
-  "expirationDate": "2026-12-06T09:00:00Z",
+  "id": "urn:uuid:123e4567-e89b-12d3-a456-426614174000",
+  "type": ["VerifiableCredential", "UniversityDegreeCredential"],
+  "issuer": "did:example:university-xyz",
+  "issuanceDate": "2025-12-01T12:00:00Z",
   "credentialSubject": {
-    "id": "did:example:student-67890",
-    "name": "Sudheer Kondamuri",
-    "courseId": "BLOCKCHAIN-101",
-    "courseName": "Introduction to Blockchain Development",
-    "completionStatus": "completed",
-    "grade": "A+"
+    "id": "did:example:student-123",
+    "givenName": "Sudheer",
+    "familyName": "Kondamuri",
+    "degree": {
+      "type": "BachelorDegree",
+      "name": "B.Tech in Computer Science"
+    }
   },
   "proof": {
     "type": "EcdsaSecp256k1Signature2019",
-    "created": "2025-12-06T09:00:10Z",
-    "verificationMethod": "did:example:issuer-12345#keys-1",
+    "created": "2025-12-01T12:00:00Z",
     "proofPurpose": "assertionMethod",
-    "jws": "PLACEHOLDER_SIGNATURE"
+    "verificationMethod": "did:example:university-xyz#keys-1",
+    "jws": "eyJ...fake-sig..."
   }
 }
